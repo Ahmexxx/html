@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>visualizza nomi</title>
+</head>
+<body onload="paginaIniziale()">
+    <div id="idlistaNomi">
+        
+    </div>
+    <main id="idMainContent">
+    </main>
+    <script>
+        var myArray=["massimo","paolo","anna","giovanna"];
+        function paginaIniziale(){
+            var strPaginaIniziale = '<label for="caricanomi">Nomi</label>';
+            strPaginaIniziale +=    '<br/>'
+            strPaginaIniziale +=    '<input id="idNome" type="button" value="riempimento" onclick="riempiFile()"> ';
+            document.getElementById("idMainContent").innerHTML = strPaginaIniziale;
+            //var myArray=["massimo","paolo","anna","giovanna"];
+        }
+        document.getElementById("idMainContent").innerHTML=myArray[0,3]
+        function riempiFile() {
+            var indice=null
+        // for (let i = 0; i < myArray.length; i++) {
+        // if (myArray[i]=="giovanna") {
+        //     var indice=i;
+        //     //console.log(myArray);
+        
+            
+        // }            
+        // }
+         
+        }
+
+    </script>
+</body>
+</html>

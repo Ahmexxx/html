@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lista Immagini</title>
+</head>
+<body onload="caricaPaginaIniziale()">
+    <main id="mainContent">
+        <!-- <label for="nomeImmagine">Immagine da inserire</label>
+        <input type="text" name="nomeImmagine" id="idNomeImmagine" onchange="validaPathImmagini()">
+        <input type="button" value="Inserisci in lista" id="idbtnInserisciInLista"disabled onclick="inserisciImmagineInLista()">
+        <div id="idListaImmagini"></div>
+        <input type="button" value="Visualizza lista immagini" disabled id="IdbtnVisualizzaImmagini" onclick="visualizzaImmagini()">
+        <div id="idSequenzaImmagini"></div> -->
+        
+    </main>
+    <!-- <a href="img/foto1.jpg" target="_blank">
+        <img src="img/foto1.jpg" alt="foto1.jpg"> -->
+    
+    <script>
+        var listaImmagini= [];
+        var elementiListaImmagini=0
+        function caricaPaginaIniziale() {
+            let strPaginaIniziale ='<label for="nomeImmagine">Immagine da inserire</label>';
+            strPaginaIniziale +='<input type="text" name="nomeImmagine" id="idNomeImmagine" onchange="validaPathImmagini()">';
+            strPaginaIniziale+='<input type="button" value="Inserisci in lista" id="idbtnInserisciInLista"disabled onclick="inserisciImmagineInLista()">';
+            strPaginaIniziale+='<div id="idListaImmagini"></div>';
+            strPaginaIniziale+='<input type="button" value="Visualizza lista immagini" disabled id="IdbtnVisualizzaImmagini" onclick="visualizzaImmagini()">';
+            strPaginaIniziale+='<div id="idSequenzaImmagini"></div>';
+            document.getElementById("mainContent").innerHTML=strPaginaIniziale;
+
+        }
+        function validaPathImmagini() {
+            let txtnomeImmagine= document.getElementById('idNomeImmagine')
+            let btnInserisciInLista=document.getElementById('idbtnInserisciInLista')
+            if (txtnomeImmagine.value!="") 
+                btnInserisciInLista.disabled =false;
+            else
+                btnInserisciInLista.disabled= true;
+                
+            
+        }
+        function inserisciImmagineInLista() {
+            let txtnomeImmagine= document.getElementById('idNomeImmagine')
+            let btnInserisciInLista= document.getElementById("idbtnInserisciInLista");
+            let IdbtnVisualizzaImmagini= document.getElementById("IdbtnVisualizzaImmagini");
+            let divListaImmagini=document.getElementById("idListaImmagini");
+            //verifica che elemento non sia gia presente 
+            if (!listaImmagini.includes(txtnomeImmagine.value.toLowerCase())) {
+                listaImmagini.push(txtnomeImmagine.value.toLowerCase());
+                let linkImage="<ul>";
+                for (let i= 0;  i< listaImmagini.length; i++) {
+                    linkImage+='<li><a href="img/'+listaImmagini[i]+'" target="-blank">' +listaImmagini[i] +'</a></li>'
+                }
+                linkImage +='</ul>';
+                divListaImmagini.innerHTML=linkImage;
+                IdbtnVisualizzaImmagini.disabled=false;
+            } else{
+                //messaggio di errore
+                 alert("immagine inserita gia presente nella lista");
+            }           
+            btnInserisciInLista.disabled= true
+            txtnomeImmagine.value="";
+            txtnomeImmagine.focus();
+            // let linkImage='<a href="img/"'+txtnomeImmagine+'' +txtnomeImmagine.value> '</a>'
+            // divListaImmagini.innerHTML=linkImage;
+            console.log(listaImmagini);
+        }
+        function visualizzaImmagini(){
+            let dividSequenzaImmagini= document.getElementById('idSequenzaImmagini');
+            let imageItems="";
+            for (let i = 0; i < listaImmagini.length; i++) {
+                imageItems+='<a href="img/ '+ listaImmagini[i]+'" target ="_blank">';
+                imageItems+='<img src="img/'+listaImmagini[i]+'" alt="listaImmagini[i]">'
+                imageItems+='</a>'
+                
+            }
+            dividSequenzaImmagini.innerHTML=imageItems
+
+
+            
+        }
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="caricaPagina()">
+   <main id="idMainContent">
+
+   
+
+        <!-- <div id="idListaNomi">
+
+        </div>
+        <input type="button" value="carica nomi" id="btncaricanomi" onclick="caricaPagina()"> -->
+
+
+    </main>
+    <script>
+        function caricaPagina() {
+            let strPaginaInizial='<div id="idListaNomi">';
+                strPaginaInizial+= '</div>';
+                strPaginaInizial+='<div id="idListaNomi2">';
+                strPaginaInizial+= '</div>';
+                strPaginaInizial+='<input type="button" value="carica nomi" id="btncaricanomi" onclick="caricaNomi()">';
+                console.log(strPaginaInizial);
+            document.getElementById("idMainContent").innerHTML=strPaginaInizial;
+
+        }
+        function caricaNomi() {
+            // let divListaNomib=document.getElementById("idListaNomi2");
+             //let arrayNomi=["massimo","paolo","anna","giovanna"];
+            // let arrayNomib=[];
+            // let strItemsb="";
+            // for (let i = 0; i < arrayNomi.length; i++) {
+            //     arrayNomib[arrayNomi.length-1-i]=arrayNomi[i]                             
+            //     //strItemsb+='<p>' + (i+1).toString()+' - '+ arrayNomib[arrayNomi.length-1-i] + '</p>';
+            // }
+            // // console.log(arrayNomib);
+            // //letdivListaNomib=document.getElementById("idListaNomi");
+            // let divListaNomi=document.getElementById("idListaNomi");
+            // let strItems="";          
+            // for(let i=0; i<arrayNomi.length;i++){
+            //     strItems+='<p>' + (i+1).toString()+' - '+ arrayNomi[i] + '</p>';
+            //     strItemsb+='<p>' + (arrayNomib.length-i).toString()+' - '+ arrayNomib[i] + '</p>';
+            let arrayNomi=["massimo","paolo","anna","giovanna"];
+            let divListaNomi=document.getElementById("idListaNomi");
+            let divListaNomib=document.getElementById("idListaNomi2");
+            let strItems="";  
+            let strItemsb="";        
+            for(let i=0; i<arrayNomi.length;i++){
+                strItems+='<p>' + (i+1).toString()+' - '+ arrayNomi[i] + '</p>';
+                strItemsb+='<p>' + (arrayNomi.length-i).toString()+' - '+ arrayNomi[arrayNomi.length-i-1] + '</p>';
+            }
+            divListaNomi.innerHTML=strItems;
+            divListaNomib.innerHTML=strItemsb
+        }
+            // let strItemsb="";
+            
+//             for (let i = arrayNome.length-1; i < array.length; i--){
+                
+// a               strItems+='<p>' + (i-1).toString()+' - '+ arrayNome[i] + '</p>';
+            //}
+            // divListaNomi.innerHTML=strItems;
+            
+            
+       
+        
+    </script>
+</body>
+
+</html>

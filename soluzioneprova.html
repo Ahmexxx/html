@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>soluzione prova</title>
+</head>
+<body>
+    <main id="idMainC">
+     <!--   <label for="txtImmagine01">Immagine01</label>
+            <input type="text" name="txtImmagine01" id="txtImmagine01"></main</br>
+        <label for="txtImmagine02">Immagine02</label>
+            <input type="text" name="txtImmagine02" id="txtImmagine02">
+        <div id="idimmagini">
+             --LE IMMAGINI SARANNO CARICATE A RUNTIME--
+            <img src="img\cagnolino.jpg" alt="cane" width="300" height="200" id="immagine1">
+            <img src="img\paesaggio.jpg" alt="paesaggio" width="300"height="200" id="immagine2">
+        </div>
+        <input type="button" value="caricaImmagini" onclick="caricaimag()">
+        <input type="button" value="inverti" onclick="invertimag()">
+        -->
+        <script>
+        
+            var strhomep='<label for="txtImmagine01">Immagine01</label>';
+            strhomep +='<input type="text" name="txtImmagine01" id="txtImmagine01" placeholder="cagnolino.jpg">';
+            strhomep +='<br/>'
+            strhomep +='<label for="txtImmagine02">Immagine02</label>';
+            strhomep +='<input type="text" name="txtImmagine02" id="txtImmagine02" placeholder="paesaggio.jpg">';
+            strhomep +='<br/>';
+            strhomep +='<div id="idimmagini">';
+           // strhomep +='<img src="img\cagnolino.jpg" alt="cane" width="300" height="200" id="immagine1">'
+            strhomep +=' </div>';
+            strhomep +='<input type="button" value="caricaImmagini" onclick="caricaImmagini()">';
+            strhomep +='<input type="button" value="inverti" onclick="invertimag()">';
+            document.getElementById("idMainC").innerHTML=strhomep;
+            var objImmagine01 =document.getElementById("txtImmagine01");
+            var objImmagine02 =document.getElementById("txtImmagine02");
+
+            //console.log (pathImmagine01);
+            //console.log(pathImmagine02);
+            function caricaImmagini(){
+                console.log ("txtImmagine01"+objImmagine01.value);
+                console.log("txtImmagine02"+objImmagine02.value);
+                var strImmagini ='<img src="img/'+ objImmagine01.value +'" alt="cane" width="300" height="200" id="immagine1">';
+                strImmagini +='<img src="img/'+objImmagine02.value+'" alt="paesaggio" width="300"height="200" id="immagine2">';
+                document.getElementById("idimmagini").innerHTML=strImmagini;
+
+            }
+            function invertimag(){
+                //console.log("inverti immagine");
+                var temp= objImmagine01;
+                objImmagine01=objImmagine02;
+                objImmagine02=temp;
+                var strImmagini ='<img src="img/'+ objImmagine01.value +'" alt="cane" width="300" height="200" id="immagine1">';
+                strImmagini +='<img src="img/'+objImmagine02.value+'" alt="paesaggio" width="300"height="200" id="immagine2">';
+                document.getElementById("idimmagini").innerHTML=strImmagini;
+
+ 
+            }
+            function invertimagCopia(){
+
+                var objImmagine01ValueCopia=objImmagine01.value;
+                var objImmagine02ValueCopia=objImmagine02.value;
+                var temp=objImmagine01ValueCopia;
+                objImmagine02ValueCopia=objImmagine01ValueCopia;
+                objImmagine01ValueCopia=temp
+                var strImmagini ='<img src="img/'+ objImmagine01ValueCopia +'" alt="cane" width="300" height="200" id="immagine1">';
+                strImmagini +='<img src="img/'+objImmagine02ValueCopia+'" alt="paesaggio" width="300"height="200" id="immagine2">';
+                document.getElementById("idimmagini").innerHTML=strImmagini;
+
+                //console.log("inverti immagine");
+                var temp= objImmagine01;
+                objImmagine01=objImmagine02;
+                objImmagine02=temp;
+                var strImmagini ='<img src="img/'+ objImmagine01.value +'" alt="cane" width="300" height="200" id="immagine1">';
+                strImmagini +='<img src="img/'+objImmagine02.value+'" alt="paesaggio" width="300"height="200" id="immagine2">';
+                document.getElementById("idimmagini").innerHTML=strImmagini;
+            
+            
+            }
+
+
+        </script>
+
+
+    </main>
+
+
+
+
+
+</body>
+</html>

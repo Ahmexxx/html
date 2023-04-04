@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var myArray=["massimo","paolo","anna","giovanna"];
+        // for (let i = 0; i < myArray.length; i++) {
+        //      console.log( myArray[i]);}
+        //caso2
+        var indiceanna=null
+        for (let i = 0; i < myArray.length; i++) {
+        if (myArray[i]=="anna") {
+            var indiceanna=i;
+        }
+            
+        }
+        console.log("indice di anna: " +indiceanna); 
+        
+    //caso3
+        var indiceanna=null
+        for (let i = 0; i < myArray.length; i++) {
+        if (myArray[i]=="anna") {
+            indiceanna=i
+            break;
+        }
+            
+        }
+        console.log("indice di anna: " +indiceanna);
+        
+    //while
+        var j=0;
+        while (j < myArray.length) {
+            console.log(myArray[j++]);          
+        }
+        //ricerca anna con while
+        let k=0
+        while (myArray[k]!="anna") {
+            k++;
+        }
+        console.log("indice di anna: " + k);
+
+        //do-whil
+        let jj=0
+        do{
+            console.log(myArray[jj++]);
+
+        }while (jj<myArray.length);  
+        
+        //do-whil
+         jj=0;
+        do{
+            
+        }while (myArray[jj++]!="anna");
+        console.log("INDICE DI ANNA: " + (jj-1)); 
+    
+        
+    
+    </script>
+    
+</body>
+</html>
