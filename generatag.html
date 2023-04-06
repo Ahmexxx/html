@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generatore di tag</title>
+</head>
+<body>
+    <main>
+
+    </main>
+    <input type="button" value="genera tag" onclick="scriviTag('p','ciao Ahmed','idAhmed')">
+    <div id="idTag"></div>
+    <script>
+        function scriviTag() {
+            document.getElementById("idTag").innerHTML=generaTag('img','foto1.jpg','idfoto1','immagine','img/foto1.jpg')
+        }
+        function generaTag(tag,innerText,id,classe,src,href,url,img) {
+            let strTag="";
+            let lowerTag=tag.toLowerCase();
+            switch (lowerTag) {
+                case 'p':
+                case 'h1':
+                case 'h3':
+                case 'span':
+                
+                    strTag+='< '+ lowerTag +' id="'+id+'" class=" '+ classe+'"'+ ' > ' + '</ ';
+                    strTag +=innerText;
+                    strTag += lowerTag  + ' >';
+                    console.log(strTag);
+                case 'a':
+                
+                    strTag+='< '+ lowerTag +'href="'+url+' id="'+id+'"'+ '" class="'+ classe+'"'+ ' > ';
+                    strTag +=innerText;
+                    strTag += lowerTag  + ' >';
+                    console.log(strTag);
+                case 'img':
+                    strTag+='< '+ lowerTag +'src="'+url+'"'+ 'id="'+id + '" class="'+ classe+'"'+'alt="'+innerText+'"'+ ' /> ';
+                    
+                    console.log(strTag);
+                    
+                    break;
+            
+                default:
+                    break;
+               }
+               return strTag;
+    }
+    </script>
+    
+</body>
+</html>

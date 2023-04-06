@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passaggio parametri</title>
+</head>
+<body>
+    <input type="button" value="Calcola" onclick="Calcola()" id="idsomma">
+    <span id="idOperazione"></span>
+    <script>
+        function Calcola() {
+
+            let valore01=10;
+            let valore02=20;
+            let operazione='';
+            // let totalizzatore= somma(valore01,valore02);
+            // console.log("valore calcolato di somma: " + valore01.toString());
+            // console.log("valore calcolato di somma: " + valore02.toString());
+            // console.log("valore calcolato di somma: " + totalizzatore.toString());
+            // totalizzatore=moltiplica(valore01,valore02);
+            // console.log("valore calcolato di moltiplica: "+moltiplica (valore01,valore02).toString());
+            
+            let spanOperazione=document.getElementById("idOperazione");
+            operazione='/';
+            spanOperazione.innerHTML="operazione eseguita"+operazione+"risultato"+ operazioni(operazione,valore01,valore02).toString();
+        }
+        function somma(par01,par02)  {
+            par01++;
+            par02++;
+            return par01+par02;
+
+        }
+        function moltiplica(par01,par02)  {
+            return par01*par02;
+        }
+        function operazioni(operazione,par01,par02) {
+            // if (operazione=='*')
+            //     return par01*par02;
+            // if (operazione=='/')
+            //     if(par02!=0)
+            //         return par01/par02;
+            //     else
+            //         return "errore";
+
+            // if (operazione=='-')
+            //     return par01-par02;
+            // if (operazione=='+')
+            //     return par01+par02;
+            let valoreCalcolato=0;
+            switch (operazione) {
+                case '*':
+                    valoreCalcolato=par01*par02;
+                    break;
+                case '/':
+                    if(par02!=0)
+                        valoreCalcolato=par01/par02;
+                    else
+                        valoreCalcolato="errore"
+                    break;
+                case '+':
+                    valoreCalcolato=par01+par02;
+                    break;
+                case '-':
+                    valoreCalcolato= par01-par02;
+                    break;
+                default:
+                    break;
+            }
+            return valoreCalcolato;
+        }
+    </script>
+</body>
+</html>
