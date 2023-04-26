@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="file" name="Carica1" id="from-Carica1">
+    <input type="file" name="Carica2" id="from-Carica2">
+    
+    <div>
+		<img id="img1" src="" alt="">
+		<img id="img2" src="" alt="">
+	</div>
+    <button onclick="caricaImmagini()">Carica immagini</button>
+	<button onclick="invertiPosizione()">Inverti posizione</button>
+    <script>
+		function caricaImmagini() {
+			document.getElementById("img1").src = "img/cagnolino.jpg";
+			document.getElementById("img2").src = "img/paesaggio.jpg";
+		}
+        function invertiPosizione() 
+        {
+			var img1 = document.getElementById("img1");
+			var img2 = document.getElementById("img2");
+            var src = img1.src;
+            img1.src = img2.src;
+            img2.src = src;
+        }
+        </script>
+        
+</body>
+</html>

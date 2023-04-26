@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova sommativa01</title>
+    <link rel="stylesheet" href="prova sommativa.css">
+    <script src="provaSommativa.js"></script>
+</head>
+<body>
+    <form name="myform" action="">
+        <label for="txtNumeroRighe">Inserisci il numero</label>
+        <input type="number" name="txtNumeroRighe" id="txtNumeroRighe" min="1" onchange="abilitaBottone()">
+        <label for="txtNumeroColonne">Inserisci il numero</label>
+        <input type="number" name="txtNumeroColonne" id="txtNumeroColonne" min ="1"onchange="abilitaBottone()">
+        <button name="btnCreaTabella"disabled onclick="creaTabella(document.getElementById)">crea tabella</button>
+        <button id = "btnHideTablla" disabled onclick="cancellaTabella()">Nascondi tabella</button>
+        
+    </form>
+    <div id="divTabella"></div>
+    <table id="table" class="Invisible"></table>
+</body>
+</html>
